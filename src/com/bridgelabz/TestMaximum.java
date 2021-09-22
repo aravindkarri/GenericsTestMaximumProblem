@@ -1,21 +1,22 @@
 package com.bridgelabz;
 /**
  * @author Aravind
- * class to find the maximum from given 3 float numbers
+ * class to find the maximum from given 3 Strings
  */
 public class TestMaximum {
 
     public static void main(String[] args) {
 
-        Float number1 = 2.5f;
-        Float number2 = 3.1f;
-        Float number3 = 1.19f;
-        Float maximumNum = testMax(number1,number2,number3);
-        System.out.println("Maximum number is : "+maximumNum);
+        String name1 = "Apple";
+        String name2 = "Peach";
+        String name3 = "Banana";
+        String maximum = testMax(name1,name2,name3);
+        System.out.println("Maximum length of string is : "+maximum);
     }
     /**
      * Method name: testMax
-     * description: It takes three float numbers and calculates max number using compareTo method.
+     * description: It takes three String names and calculates max number using compareTo method by
+     * checking lexicographically.
      * Algorithm: testMax takes three parameter and find max using compareTo. if one number is
      * greater than other one then compareTo gives positive number(1), lesser than other one it gives
      * negative(-1).if they are equal it gives 0.
@@ -24,9 +25,9 @@ public class TestMaximum {
      * @param number3
      * @return maximumNumber
      */
-    public static Float testMax(Float number1, Float number2, Float number3) {
+    public static String testMax(String number1, String number2, String number3) {
 
-        Float maximumNumber = number1;
+        String maximumNumber = number1;
         if(number2.compareTo(maximumNumber) > 0 )
         {
             maximumNumber = number2;
