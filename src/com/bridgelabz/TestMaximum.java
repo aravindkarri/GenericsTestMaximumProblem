@@ -1,41 +1,50 @@
 package com.bridgelabz;
 /**
  * @author Aravind
- * class to find the maximum from given 3 Strings
+ * class to find the maximum of different data types using generic method
  */
 public class TestMaximum {
 
     public static void main(String[] args) {
 
+        Integer number1 = 2;
+        Integer number2 = 3;
+        Integer number3 = 5;
+        Float num1 = 2.5f;
+        Float num2 = 3.1f;
+        Float num3 = 1.19f;
         String name1 = "Apple";
         String name2 = "Peach";
         String name3 = "Banana";
-        String maximum = testMax(name1,name2,name3);
-        System.out.println("Maximum length of string is : "+maximum);
+        Integer maxInt = testMax(number1,number2,number3);
+        System.out.println("Maximum integer is : "+maxInt);
+        Float maxFloat = testMax(num1,num2,num3);
+        System.out.println("Maximum float is : "+maxFloat);
+        String maxString = testMax(name1,name2,name3);
+        System.out.println("Maximum String is : "+maxString);
     }
     /**
      * Method name: testMax
-     * description: It takes three String names and calculates max number using compareTo method by
-     * checking lexicographically.
-     * Algorithm: testMax takes three parameter and find max using compareTo. if one number is
-     * greater than other one then compareTo gives positive number(1), lesser than other one it gives
-     * negative(-1).if they are equal it gives 0.
-     * @param number1
-     * @param number2
-     * @param number3
-     * @return maximumNumber
+     * description: find the maximum of different data types using generic method
+     * Algorithm: comparable<T> is a generic interface.T accepts different data types here.
+     * testMax takes three parameter and find max using compareTo. if one number is greater than other one
+     * then compareTo gives positive number(1), lesser than other one it gives negative(-1).if they are equal it gives 0.
+     * @param x
+     * @param y
+     * @param z
+     * @return maximum
      */
-    public static String testMax(String number1, String number2, String number3) {
+    public static <T extends Comparable<T>> T testMax(T x,T y ,T z) {
 
-        String maximumNumber = number1;
-        if(number2.compareTo(maximumNumber) > 0 )
+        T maximum= x;
+        if(y.compareTo(maximum) > 0 )
         {
-            maximumNumber = number2;
+            maximum = y;
         }
-        if(number3.compareTo(maximumNumber) > 0 )
+        if(z.compareTo(maximum) > 0 )
         {
-            maximumNumber = number3;
+            maximum = z;
         }
-        return maximumNumber;
+        return maximum;
     }
 }
