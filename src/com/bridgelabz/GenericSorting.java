@@ -1,7 +1,7 @@
 package com.bridgelabz;
 /**
- * class to
- * @param <T>
+ * @author Aravind
+ * class to sort given array elements using generic class
  */
 public class GenericSorting<T extends Comparable<T>>
 {
