@@ -37,12 +37,21 @@ public class GenericSorting<T extends Comparable<T>>
         return myArray;
     }
     //method to swap elements using temp variable
-    private void swapElements(int j, T[] myArray2)
+    private void swapElements(int j, T[] myArray)
     {
         T temp = myArray[j];
         myArray[j] = myArray[j+1];
         myArray[j+1] = temp;
 
+    }
+    //print the array elements using for each loop
+    public static <E> void toPrint(E[] inputArray)
+    {
+        for(E element: inputArray)
+        {
+            System.out.printf("%s",element);
+        }
+        System.out.println();
     }
     //main method
     public static void main(String[] args)
@@ -51,10 +60,13 @@ public class GenericSorting<T extends Comparable<T>>
         Double[] doubleArray = {1.1,2.2,3.3,4.4};
         Character[] charArray = {'H','E','L','L','O'};
         GenericSorting<Integer>printIntegerArray = new GenericSorting<>(intArray);
-        printIntegerArray.sortElements();
+        Integer[] sortedArray1 = printIntegerArray.sortElements();
+        printIntegerArray.toPrint(sortedArray1);
         GenericSorting<Double>printDoubleArray = new GenericSorting<>(doubleArray);
-        printDoubleArray.sortElements();
+        Double[] sortedArray2 = printDoubleArray.sortElements();
+        printDoubleArray.toPrint(sortedArray2);
         GenericSorting<Character>printCharacterArray = new GenericSorting<>(charArray);
-        printCharacterArray.sortElements();
+        Character[] sortedArray3 = printCharacterArray.sortElements();
+        printCharacterArray.toPrint(sortedArray3);
     }
 }
